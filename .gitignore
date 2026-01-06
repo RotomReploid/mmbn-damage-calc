@@ -4,5 +4,5 @@ package-lock.json
 package.json
 **.ts
 *.js.map
-calc.d.ts.map
+*.d.ts.map
 tsconfig.json
