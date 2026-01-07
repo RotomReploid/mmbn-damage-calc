@@ -82,7 +82,7 @@
 
         function updateImage(event, type) {
             document.querySelector("img." + type).src = "./assets/chips/chip-" + threeDigits(Chips[event.srcElement.value].id) + ".png"
-            document.querySelector("img." + type + "-icon").src = "./assets/icons/icon-" + (type == "Mega" ? "mega" : threeDigits(Chips[event.srcElement.value].id)) + ".png"
+            document.querySelector("img." + type + "-icon").src = "./assets/icons/icon-" + (type == "mega" ? "mega" : threeDigits(Chips[event.srcElement.value].id)) + ".png"
         }
 
         function threeDigits(num) {
