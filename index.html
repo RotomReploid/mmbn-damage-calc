@@ -4,9 +4,14 @@
     <script src="calc.js"></script>
     <script src="chips.js" type="module"></script>
     <script type="module">
-        import { Chips } from "./chips.js"
         function loadChips() {
-            console.log(Chips);
+            const module = import("./chips.js");
+            Object.values(module.Chips).filter((x) => x.type === "Standard").map((x) => x.name).forEach((x) => {
+                var opt = document.createElement('option');
+                opt.value = x;
+                opt.innerHTML = x;
+                document.querySelector("select").appendChild(opt);
+            });
         }
     </script>
 </head>
