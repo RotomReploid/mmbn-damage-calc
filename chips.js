@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Chips = void 0;
-exports.Chips = {
+export const Chips = {
     cannon: {
         id: 1,
         name: "Cannon",
