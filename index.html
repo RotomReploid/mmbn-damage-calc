@@ -2,22 +2,80 @@
 
 <head>
     <script src="calc.js"></script>
-    <script src="chips.js" type="module"></script>
-    <script type="module">
-        function loadChips() {
-            const module = import("./chips.js");
-            Object.values(module.Chips).filter((x) => x.type === "Standard").map((x) => x.name).forEach((x) => {
-                var opt = document.createElement('option');
-                opt.value = x;
-                opt.innerHTML = x;
-                document.querySelector("select").appendChild(opt);
-            });
+    <script src="chips.js"></script>
+    <style>
+        td {
+            text-align: center;
         }
-    </script>
+    </style>
 </head>
 
 <body>
-    <select onload="loadChips()">
+    <table>
+        <tr>
+            <td>
+                <select class="standard" oninput="updateImage(event, 'standard')"></select>
+            </td>
+            <td>
+                <select class="mega" oninput="updateImage(event, 'mega')"></select>
+            </td>
+            <td>
+                <select class="giga" oninput="updateImage(event, 'giga')"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="standard">
+            </td>
+            <td>
+                <img class="mega">
+            </td>
+            <td>
+                <img class="giga">
+            </td>
+        </tr>
+    </table>
+    <br />
+    <script>
+        let Chips;
+        function loadChips() {
+            import("./chips.js").then(module => {
+                Chips = module.Chips;
+                Object.entries(Chips).filter((x) => x[1].type === "Standard").forEach((x) => {
+                    var opt = document.createElement('option');
+                    opt.value = x[0];
+                    opt.innerHTML = x[1].name;
+                    document.querySelector("select.standard").appendChild(opt);
+                    document.querySelector("img.standard").src = "./assets/chip-001.png"
+                });
+                Object.entries(Chips).filter((x) => x[1].type === "Mega").forEach((x) => {
+                    var opt = document.createElement('option');
+                    opt.value = x[0];
+                    opt.innerHTML = x[1].name;
+                    document.querySelector("select.mega").appendChild(opt);
+                    document.querySelector("img.mega").src = "./assets/chip-201.png"
+                });
+                Object.entries(Chips).filter((x) => x[1].type === "Giga").forEach((x) => {
+                    var opt = document.createElement('option');
+                    opt.value = x[0];
+                    opt.innerHTML = x[1].name;
+                    document.querySelector("select.giga").appendChild(opt);
+                    document.querySelector("img.giga").src = "./assets/chip-255.png"
+                });
+            })
+        }
+        loadChips();
+
+        function updateImage(event, type) {
+            document.querySelector("img." + type).src = "./assets/chip-" + threeDigits(Chips[event.srcElement.value].id) + ".png"
+        }
+
+        function threeDigits(num) {
+            if (num < 10) return "00" + num;
+            if (num < 100) return "0" + num;
+            return num;
+        }
+    </script>
 </body>
 
 </html>

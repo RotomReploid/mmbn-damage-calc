@@ -58,7 +58,7 @@ export const Chips = {
         type: "Standard",
     },
     suprvulc: {
-        id: 7,
+        id: 8,
         name: "SuprVulc",
         damage: {
             amount: 20,
@@ -68,70 +68,70 @@ export const Chips = {
         type: "Standard",
     },
     spreadr1: {
-        id: 8,
+        id: 9,
         name: "Spreadr1",
         damage: 30,
         element: "Null",
         type: "Standard",
     },
     spreadr2: {
-        id: 9,
+        id: 10,
         name: "Spreadr2",
         damage: 60,
         element: "Null",
         type: "Standard",
     },
     spreadr3: {
-        id: 10,
+        id: 11,
         name: "Spreadr3",
         damage: 90,
         element: "Null",
         type: "Standard",
     },
     tankcan1: {
-        id: 11,
+        id: 12,
         name: "TankCan1",
         damage: 120,
         element: "Null",
         type: "Standard",
     },
     tankcan2: {
-        id: 12,
+        id: 13,
         name: "TankCan2",
         damage: 160,
         element: "Null",
         type: "Standard"
     },
     tankcan3: {
-        id: 12,
+        id: 14,
         name: "TankCan3",
         damage: 200,
         element: "Null",
         type: "Standard"
     },
     gundels1: {
-        id: 12,
+        id: 15,
         name: "GunDelS1",
         // TODO
         element: "Null",
         type: "Standard"
     },
     gundels2: {
-        id: 12,
+        id: 16,
         name: "GunDelS2",
         // TODO
         element: "Null",
         type: "Standard"
     },
     gundels3: {
-        id: 12,
+        id: 17,
         name: "GunDelS3",
         // TODO
         element: "Null",
         type: "Standard"
     },
     yoyo: {
-        id: 12,
+        id: 18,
         name: "YoYo",
         damage: {
             amount: 50,
@@ -141,14 +141,14 @@ export const Chips = {
         type: "Standard"
     },
     firebrn1: {
-        id: 12,
+        id: 19,
         name: "FireBrn1",
         damage: 70,
         element: "Fire",
         type: "Standard"
     },
     firebrn2: {
-        id: 12,
+        id: 20,
         name: "FireBrn2",
         damage: 110,
         element: "Fire",
