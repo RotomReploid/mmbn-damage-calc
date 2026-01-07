@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title></title>
     <script src="calc.js"></script>
     <script src="chips.js"></script>
     <style>
@@ -34,8 +35,18 @@
                 <img class="giga">
             </td>
         </tr>
+        <tr>
+            <td>
+                <img class="standard-icon">
+            </td>
+            <td>
+                <img class="mega-icon">
+            </td>
+            <td>
+                <img class="giga-icon">
+            </td>
+        </tr>
     </table>
-    <br />
     <script>
         let Chips;
         function loadChips() {
@@ -46,28 +57,32 @@
                     opt.value = x[0];
                     opt.innerHTML = x[1].name;
                     document.querySelector("select.standard").appendChild(opt);
-                    document.querySelector("img.standard").src = "./assets/chip-001.png"
+                    document.querySelector("img.standard").src = "./assets/chips/chip-001.png";
+                    document.querySelector("img.standard-icon").src = "./assets/icons/icon-001.png";
                 });
                 Object.entries(Chips).filter((x) => x[1].type === "Mega").forEach((x) => {
                     var opt = document.createElement('option');
                     opt.value = x[0];
                     opt.innerHTML = x[1].name;
                     document.querySelector("select.mega").appendChild(opt);
-                    document.querySelector("img.mega").src = "./assets/chip-201.png"
+                    document.querySelector("img.mega").src = "./assets/chips/chip-201.png";
+                    document.querySelector("img.mega-icon").src = "./assets/icons/icon-mega.png";
                 });
                 Object.entries(Chips).filter((x) => x[1].type === "Giga").forEach((x) => {
                     var opt = document.createElement('option');
                     opt.value = x[0];
                     opt.innerHTML = x[1].name;
                     document.querySelector("select.giga").appendChild(opt);
-                    document.querySelector("img.giga").src = "./assets/chip-255.png"
+                    document.querySelector("img.giga").src = "./assets/chips/chip-255.png";
+                    document.querySelector("img.giga-icon").src = "./assets/icons/icon-255.png";
                 });
             })
         }
         loadChips();
 
         function updateImage(event, type) {
-            document.querySelector("img." + type).src = "./assets/chip-" + threeDigits(Chips[event.srcElement.value].id) + ".png"
+            document.querySelector("img." + type).src = "./assets/chips/chip-" + threeDigits(Chips[event.srcElement.value].id) + ".png"
+            document.querySelector("img." + type + "-icon").src = "./assets/chips/icon-" + (type == "Mega" ? "mega" : threeDigits(Chips[event.srcElement.value].id)) + ".png"
         }
 
         function threeDigits(num) {
